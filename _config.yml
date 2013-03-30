@@ -3,7 +3,7 @@
 # ----------------------- #
 
 url: http://alextucker.github.com
-title: <em>Alex Tucker</em>
+title: Alex Tucker
 subtitle: Crafter of fine software living in <em>Toronto</em> 
 author: Alex Tucker
 simple_search: http://google.com/search
@@ -91,7 +91,7 @@ disqus_short_name: alextucker
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id: "UA-39706998-1"
+google_analytics_tracking_id: UA-39706998-1
 
 # Facebook Like
 facebook_like: true
