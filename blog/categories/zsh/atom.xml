@@ -4,7 +4,7 @@
   <title><![CDATA[Category: zsh | Alex Tucker]]></title>
   <link href="http://alextucker.github.com/blog/categories/zsh/atom.xml" rel="self"/>
   <link href="http://alextucker.github.com/"/>
-  <updated>2013-03-30T11:11:49-04:00</updated>
+  <updated>2013-03-30T11:21:14-04:00</updated>
   <id>http://alextucker.github.com/</id>
   <author>
     <name><![CDATA[Alex Tucker]]></name>
@@ -29,7 +29,7 @@
 <p>alias @="python manage.py"
 alias @r="python manage.py runserver"
 alias @sh="python manage.py shell"
-alias @db="python manage.py sync_db"
+alias @db="python manage.py syncdb"
 alias @m="python manage.py migrate"
 alias @su="python manage.py createsuperuser"
 ```</p>

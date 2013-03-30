@@ -4,7 +4,7 @@
   <title><![CDATA[Alex Tucker]]></title>
   <link href="http://alextucker.github.com/atom.xml" rel="self"/>
   <link href="http://alextucker.github.com/"/>
-  <updated>2013-03-30T11:11:49-04:00</updated>
+  <updated>2013-03-30T11:21:14-04:00</updated>
   <id>http://alextucker.github.com/</id>
   <author>
     <name><![CDATA[Alex Tucker]]></name>
@@ -33,7 +33,7 @@
 </span><span class='line'>alias @="python manage.py"
 </span><span class='line'>alias @r="python manage.py runserver"
 </span><span class='line'>alias @sh="python manage.py shell"
-</span><span class='line'>alias @db="python manage.py sync_db"
+</span><span class='line'>alias @db="python manage.py syncdb"
 </span><span class='line'>alias @m="python manage.py migrate"
 </span><span class='line'>alias @su="python manage.py createsuperuser"</span></code></pre></td></tr></table></div></figure>
 
