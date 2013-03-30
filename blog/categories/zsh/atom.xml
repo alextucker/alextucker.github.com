@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: zsh | <em>Alex Tucker</em>]]></title>
+  <link href="http://alextucker.github.com/blog/categories/zsh/atom.xml" rel="self"/>
+  <link href="http://alextucker.github.com/"/>
+  <updated>2013-03-30T09:54:12-04:00</updated>
+  <id>http://alextucker.github.com/</id>
+  <author>
+    <name><![CDATA[Alex Tucker]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Django Shell Aliases]]></title>
+    <link href="http://alextucker.github.com/blog/2013/03/30/django-shell-aliases/"/>
+    <updated>2013-03-30T09:07:00-04:00</updated>
+    <id>http://alextucker.github.com/blog/2013/03/30/django-shell-aliases</id>
+    <content type="html"><![CDATA[<p>Writing <code>python manage.py runserver</code> all day long can get tedious. Even <code>./manage.py runserver</code> sucks. A coworker of mine, <a href="https://github.com/jameskeane">James</a>, suggested to create a shell alias. James maps <code>@</code> to <code>python manage.py</code> so he can just type <code>@ runserver</code>.</p>
+
+<p>I have decided to take this a step farther and shorten up all of the common <code>manage.py</code> commands. Here is a snippet from my <code>.zshrc</code>:</p>
+
+<p>```</p>
+
+<h2>Django Aliases</h2>
+
+<p>alias @="python manage.py"
+alias @r="python manage.py runserver"
+alias @sh="python manage.py shell"
+alias @db="python manage.py sync_db"
+alias @m="python manage.py migrate"
+alias @su="python manage.py createsuperuser"
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
