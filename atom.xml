@@ -4,7 +4,7 @@
   <title><![CDATA[Alex Tucker]]></title>
   <link href="http://alextucker.github.com/atom.xml" rel="self"/>
   <link href="http://alextucker.github.com/"/>
-  <updated>2013-03-30T11:21:14-04:00</updated>
+  <updated>2013-06-22T13:56:12-04:00</updated>
   <id>http://alextucker.github.com/</id>
   <author>
     <name><![CDATA[Alex Tucker]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Django Social Auth and Dropbox Python SDK]]></title>
+    <link href="http://alextucker.github.com/blog/2013/06/22/django-social-auth-and-dropbox-python-sdk/"/>
+    <updated>2013-06-22T11:38:00-04:00</updated>
+    <id>http://alextucker.github.com/blog/2013/06/22/django-social-auth-and-dropbox-python-sdk</id>
+    <content type="html"><![CDATA[<p>I have been spending some free time on the weekends working on a new project that simplifies sharing files between freelancers or agencies and their clients called <a href="http://www.pole.io">Pole.io</a>. Obviously one of features that would be required is to Sign In with your Dropbox account.</p>
+
+<p>Dropbox has an <a href="https://www.dropbox.com/developers">API</a> and supports OAuth v1 for authentication. Django has a fantastic library called <a href="https://github.com/omab/django-social-auth">Django Social Auth</a> which handles all of the nuances of communicating with different OAuth implementations and automatically hooks intos Django&#8217;s User and Authentication systems.</p>
+
+<p>Django Social Auth <a href="http://django-social-auth.readthedocs.org/en/latest/backends/dropbox.html">supports Dropbox</a> and Dropbox has an <a href="https://www.dropbox.com/developers/core/start/python">Official Python SDK</a> (which is just a nice wrapper on their REST API). I ran into a a little problem with how Django Social Auth stores the OAuth Credentials and getting them to work with the Dropbox Python SDK.</p>
+
+<p>The Dropbox SDK expects you to construct the <code>DropboxClient</code> with a <code>DropboxSession</code>. Much of documentation shows examples of using the <code>DropboxSession</code> object to perform the actualy authentication, but since Django Social Auth takes care of that, we will need to set the Access Token and Secret on the <code>DropboxSession</code> ourselves.</p>
+
+<p>The code below deomstrates how to get get the Access Token and Secret out of the Django Social Auth, set the Access Token and Secret on the <code>DropboxSession</code> and construct a new <code>DropboxClient</code> to access the Dropbox API:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from social_auth.models import UserSocialAuth
+</span><span class='line'>from dropbox import client, session
+</span><span class='line'>
+</span><span class='line'># Get Access Token and Secret
+</span><span class='line'>social_user = UserSocialAuth.objects.get(user=request.user)
+</span><span class='line'>token = social_user.tokens['access_token'].split('&')[0].split('=')[1]
+</span><span class='line'>secret = social_user.tokens['access_token'].split('&')[1].split('=')[1]
+</span><span class='line'>
+</span><span class='line'># Set Access Token on Session
+</span><span class='line'>sess = session.DropboxSession(settings.DROPBOX_APP_ID, settings.DROPBOX_API_SECRET, 'dropbox')
+</span><span class='line'>sess.set_token(secret, token)
+</span><span class='line'>
+</span><span class='line'>dropbox_client = client.DropboxClient(sess)
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Django Shell Aliases]]></title>
